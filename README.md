@@ -3,7 +3,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-A work in progress that uses Bootstrap, ReactJS, MapBox, and the Wordpress REST API. The project is a listing of breweries located in Colorado. It displays listings by city. Additionally, lists the breweries on a map of Colorado.
+A work in progress uses Bootstrap, ReactJS, MapBox, and the WordPress REST API. The project is a listing of breweries located in Colorado. It displays listings by city. Additionally, it lists the breweries on a map of Colorado. Each listing included a detailed listing page with more information about the brewery.
 
 
 
