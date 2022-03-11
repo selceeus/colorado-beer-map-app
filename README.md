@@ -1,4 +1,6 @@
-## Colorado Beer Map App
+# Colorado Beer Map App
+
+
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
