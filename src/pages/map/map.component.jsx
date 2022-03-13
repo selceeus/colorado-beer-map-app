@@ -114,7 +114,7 @@ class Map extends Component {
                     'interpolate',
                     ['linear'],
                     ['zoom'],
-                    15,
+                    Number(15),
                     0,
                     15.05,
                     ['get', 'height']

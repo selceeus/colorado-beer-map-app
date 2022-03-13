@@ -1,12 +1,12 @@
 import React from 'react';
-import { Container, Jumbotron } from 'reactstrap';
+import { Container } from 'reactstrap';
 import CtaButton from '../utilities/cta-button.component';
 import './home-hero.styles.scss';
 
 const HomeHero = props => {
 
     return(
-        <Jumbotron fluid className="home-hero">
+        <section className="hero bg-light mb-4 py-3 py-sm-5">
             <Container>
                 <h1 className="display-3">{props.headline}</h1>
                 <p className="lead">{props.content}</p>
@@ -14,7 +14,7 @@ const HomeHero = props => {
                     <CtaButton button={props.buttonText} /> 
                 </div>
             </Container>
-        </Jumbotron>
+        </section>
     );
 }
 
