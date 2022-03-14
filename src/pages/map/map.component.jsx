@@ -46,8 +46,6 @@ class Map extends Component {
         const renderMarkers= Object.entries(apiData);
         const { popupInfo } = this.state;
 
-        console.log(apiData);
-
         if(!renderMarkers.length) {
             return <Loader />;
         }
