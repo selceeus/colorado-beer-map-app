@@ -3,7 +3,6 @@ import { Container, Row, Col } from 'reactstrap';
 import Loader from '../../components/utilities/loader.component';
 import axios from 'axios';
 import Carousel from '../../components/carousel/carousel.component';
-import Cta from '../../components/cta/cta.component';
 import { detailedUrl } from '../../shared/sharedKeys';
 import parse from 'html-react-parser';
 import './detailed-listing.styles.scss';
