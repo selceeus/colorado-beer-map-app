@@ -40,10 +40,6 @@ class DetailedListing extends Component {
                         <h5 className="border-bottom pb-2">Description</h5>
                         { parse(apiData.content.rendered) }
                     </Col>
-                    <Col>
-                        <h5 className="border-bottom pb-2">Specials</h5>
-                        <p>{ apiData.acf.specials }</p>
-                    </Col>
                 </Row>
             );
         }
@@ -73,28 +69,8 @@ class DetailedListing extends Component {
                         <Row className="my-5">
                             <Col>
                                 <h5 className="border-bottom pb-2">Description</h5>
-                                ${ parse(apiData.content.rendered) }
+                                { parse(apiData.content.rendered) }
                             </Col>
-                            <Col>
-                                <h5 className="border-bottom pb-2">Specials</h5>
-                                <p>${ apiData.acf.specials }</p>
-                            </Col>
-                        </Row>
-                        <Row className="my-5">
-                            <Cta headline={'Find Events'} content={'Events text'} buttonText={'See Events'} />
-                        </Row>
-                        <Row className="my-5">
-                            <Col md="6">
-                                <h6 className="border-bottom pb-2">On Tap</h6>
-                                <p>${ apiData.acf.beers }</p>
-                            </Col>
-                            <Col md="6">
-                                <h6 className="border-bottom pb-2">Food Truck Schedule</h6>
-                                <p>${ apiData.acf.foodtrucks }</p>
-                            </Col>
-                        </Row>
-                        <Row className="my-5">
-                            <Cta headline={'Book a Tour'} content={'Tour text'} buttonText={'Book Now!'} />
                         </Row>
                     </Container>
                 </React.Fragment> 

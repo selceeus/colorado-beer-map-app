@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { baseUrl, offsetUrl, mapKey } from '../../shared/sharedKeys';
+import Hero from '../../components/utilities/hero.component';
+import CityHeader from '../../components/city-header/city-header.component';
 import MapGL, { GeolocateControl, NavigationControl, Layer, Marker, Popup } from 'react-map-gl';
+import { Container, Row } from 'reactstrap';
 import Loader from '../../components/utilities/loader.component';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import parse from 'html-react-parser';
@@ -43,10 +46,11 @@ class Map extends Component {
         const renderMarkers= Object.entries(apiData);
         const { popupInfo } = this.state;
 
+        console.log(apiData);
+
         if(!renderMarkers.length) {
             return <Loader />;
         }
-
         return(
             renderMarkers.map(data => (
                 <div key={data[1].id}>
@@ -114,7 +118,7 @@ class Map extends Component {
                     'interpolate',
                     ['linear'],
                     ['zoom'],
-                    Number(15),
+                    15,
                     0,
                     15.05,
                     ['get', 'height']
@@ -134,44 +138,49 @@ class Map extends Component {
 
         return(
             <div>
-                <section className='map jumbotron-fluid d-flex align-items-start'>
-                    <MapGL
-                        {...viewport}
-                        width="100vw"
-                        height="95vh"
-                        mapStyle='mapbox://styles/mapbox/light-v10'
+                <section className='map'>    
+                    <Hero />
+                    <CityHeader headline="See the Map" content="Start Looking for beer in your area." display="3"/>
+                    <Container>
+                        <Row>
+                            <MapGL
+                                {...viewport}
+                                width="100vw"
+                                height="95vh"
+                                mapStyle='mapbox://styles/mapbox/light-v10'
 
-                        onViewportChange={
-                            viewport => this.setState({viewport})
-                        }
+                                onViewportChange={
+                                    viewport => this.setState({viewport})
+                                }
+                                mapboxApiAccessToken={MAPBOX_TOKEN}
+                                type="raster-dem"
+                                url="mapbox://mapbox.mapbox-terrain-dem-v1"
+                                tileSize={256}
+                                maxZoom={20}
+                            >
+                                <Layer {...building3d} />
 
-                        mapboxApiAccessToken={MAPBOX_TOKEN}
-                        type="raster-dem"
-                        url="mapbox://mapbox.mapbox-terrain-dem-v1"
-                        tileSize="256"
-                        maxZoom="20"
-                    >
-                        <Layer {...building3d} />
+                                <div style={{position: 'absolute', top: 20, right: 50}}>
+                                        <NavigationControl />
+                                </div>
 
-                        <div style={{position: 'absolute', top: 20, right: 20}}>
-                                <NavigationControl />
-                        </div>
+                                <GeolocateControl
+                                    style={{
+                                        position: 'absolute',
+                                        top: 100,
+                                        right: 0,
+                                        margin: 20,
+                                        overflow: 'hidden'
+                                    }}
 
-                        <GeolocateControl
-                            style={{
-                                position: 'absolute',
-                                top: 100,
-                                right: 0,
-                                margin: 20,
-                                overflow: 'hidden'
-                            }}
-
-                            positionOptions={{enableHighAccuracy: true}}
-                            fitBoundsOptions={{maxZoom: 5}}
-                            trackUserLocation={true}
-                        />
-                        {this.renderUIElements(breweries)}
-                    </MapGL>
+                                    positionOptions={{enableHighAccuracy: true}}
+                                    fitBoundsOptions={{maxZoom: 5}}
+                                    trackUserLocation={true}
+                                />
+                                {this.renderUIElements(breweries)}
+                            </MapGL>
+                        </Row>
+                    </Container>
                 </section>
             </div>
         );
