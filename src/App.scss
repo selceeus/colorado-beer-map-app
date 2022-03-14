@@ -30,6 +30,7 @@ h2 {
     border-radius:1px;
     border-color: rgba(0,0,0,.05);
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.03);
+    min-height: 30vh;
     
     &:hover {
         transform: scale(1.05);
@@ -71,7 +72,6 @@ h2 {
     font-size: 3.5rem;
 }
 .btn {
-    text-transform: uppercase;
     padding: .8rem .75rem .9rem;
     border-radius:0;
     border:none;

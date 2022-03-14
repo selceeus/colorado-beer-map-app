@@ -19,17 +19,54 @@
 
 nav {
 
+    a {
+        color: darkslategrey;
+        text-decoration: none;
+    }
+
     &.navbar {
-        background-color: transparent !important;
+        background-color: rgba(255,255,255, .6) !important;
         position: fixed;
         width:100%;
         height: 11vh;
+
+        a {
+            color: darkslategray;
+        }
+
+        .nav-link.dropdown-toggle {
+            color: #fff;
+        }
     }
 
     &.scroll-background {
-        background-color: red!important;
+        background-color: darkslategray !important;
         animation: fadeSlow .15s ease-out .15s;
         animation-fill-mode: backwards;
+
+        a.navbar-brand,
+        .nav-item a {
+            color: #fff;
+        }
+
+        .dropdown-toggle {
+            background-color: #666;
+
+            a {
+                color:darkslategray;
+            }
+
+            .dropdown-item a {
+                color:darkslategray;
+            }
+        }
+    }
+}
+
+.navbar-nav {
+
+    a.nav-link {
+        padding: .75rem 1rem 0 0;
     }
 }
 

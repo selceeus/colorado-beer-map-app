@@ -1,7 +1,10 @@
 {
   "name": "colorado-beer-map",
+  "author": "Matt Andrews",
+  "email": "matt@carbonbasedcreative.com",
   "version": "0.1.0",
   "private": true,
+  "license": "unlicense",
   "dependencies": {
     "@babel/runtime": "^7.17.2",
     "@react-three/fiber": "7.0.26",

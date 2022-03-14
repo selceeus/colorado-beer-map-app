@@ -1,5 +1,6 @@
 import React from 'react';
-import HomeHero from '../../components/home-hero/home-hero.component';
+import Hero from '../../components/utilities/hero.component';
+import CityHeader from '../../components/city-header/city-header.component';
 import Featured from '../../components/featured/featured.component';
 import MostRecent from '../../components/most-recent/most-recent.component';
 import './homepage.styles.scss';
@@ -7,7 +8,8 @@ import './homepage.styles.scss';
 const Homepage = props => {
     return(
         <section className='homepage'>
-            <HomeHero headline={'Get Started'} content={'test'} buttonText={'test'} />
+            <Hero />
+            <CityHeader headline="Get Started!" content="Start Looking for beer in your area." display="1"/>
             <Featured />
             <MostRecent />
         </section>

@@ -70,14 +70,17 @@ class Header extends Component {
         return(
             <React.Fragment>
                 <Navbar role="navigation" sticky="top" color="light" expand="md" fixed="true" className={this.state.className}>
-                    <div className="container-fluid">
-                        <NavbarBrand className="mr-auto" href="/">Colorado Beer Map</NavbarBrand>
+                    <div className="d-flex justify-content-between align-items-center">
+                        <NavbarBrand href="/">Colorado Beer Map</NavbarBrand>
                         <NavbarToggler onClick={this.toggleNav} />
                         <Collapse isOpen={isNavOpen} navbar>
                             <Nav navbar className="navbar-nav ml-auto">
+                                <NavItem>
+                                    <NavLink className="map-page nav-link" to={{ pathname: "/map"}}>Map</NavLink>
+                                </NavItem>
                                 <UncontrolledDropdown>
                                     <DropdownToggle className="nav-link" caret>
-                                        Cities
+                                        Choose City
                                     </DropdownToggle>
                                     <DropdownMenu>
                                         <DropdownItem>
@@ -166,11 +169,6 @@ class Header extends Component {
                                         </DropdownItem>
                                     </DropdownMenu>
                                 </UncontrolledDropdown>
-                                <NavItem>
-                                    <NavLink className="map-page nav-link" to={{ pathname: "/map"}}>Map</NavLink>
-                                </NavItem>
-                                <span className="navbar-text ml-auto">
-                            </span>
                             </Nav>
                         </Collapse>
                     </div>

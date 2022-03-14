@@ -80,8 +80,8 @@ class CityListing extends Component {
 
         return(
             <section className="city-listing">
-                <Hero headline={ city } />
-                <CityHeader />
+                <Hero />
+                <CityHeader headline={ city } content="View listings from this city." display="3"/>
                 <Container className="mb-5">
                     <Row>
                         {this.renderCityList(breweries)}
