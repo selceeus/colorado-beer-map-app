@@ -10,20 +10,7 @@ class Contact extends Component {
 
         this.state = {
             headline: 'Contact',
-            lead: 'You have questions, we might have the answers!',
-            firstName: '',
-            lastName: '',
-            phoneNum: '',
-            email: '',
-            agree: false,
-            contactType: 'By Phone',
-            feedback: '',
-            touched: {
-                firstName: false,
-                lastName: false,
-                phoneNum: false,
-                email: false
-            }
+            lead: 'You have questions, we might have the answers!'
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
