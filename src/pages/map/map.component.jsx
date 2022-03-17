@@ -81,7 +81,7 @@ class Map extends Component {
                                 onClose={() => this.setState({ popupInfo: null })}
                             >
                                 <h6>{parse(popupInfo.title.rendered)}</h6>
-                                { popupInfo.content.rendered ? <p>{parse(popupInfo.content.rendered)}</p> : '' }
+                                { popupInfo.content.rendered ? <span>{parse(popupInfo.content.rendered)}</span> : '' }
                                 { popupInfo.acf.location.website ?  <a href={popupInfo.acf.location.website} target="_blank" rel="noopener noreferrer">Website</a> : '' }
                             </Popup>
                         )
@@ -93,6 +93,12 @@ class Map extends Component {
    
     componentDidMount() {
         this.getMapBreweries();
+    }
+
+    componentWillUnmount() {
+        this.setState = (state, callback) => {
+            return;
+        };
     }
 
     render() {

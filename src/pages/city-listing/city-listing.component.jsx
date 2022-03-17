@@ -11,8 +11,6 @@ import './city-listing.styles.scss';
 
 class CityListing extends Component {
 
-    _isMounted = false;
-
     constructor(props) {
         super(props);
         this.state = {
@@ -66,12 +64,13 @@ class CityListing extends Component {
     }
 
     componentDidMount () {
-        this._isMounted = true;
         this.getCityBreweries();
     }
 
     componentWillUnmount() {
-        this._isMounted = false;
+        this.setState = (state, callback) => {
+            return;
+        };
     }
 
     render() {

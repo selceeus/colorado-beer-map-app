@@ -51,8 +51,6 @@ class App extends Component {
                   </TransitionGroup>
                 )} />
               </main>
-          {/*<Footer />*/}
-          {/*<StyleGuide />*/}
         </div>
       );
     }
