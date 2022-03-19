@@ -9,8 +9,6 @@ import './detailed-listing.styles.scss';
 
 class DetailedListing extends Component {
 
-    _isMounted = false;
-
     constructor(props) {
         super(props);
         this.state = {
@@ -78,13 +76,14 @@ class DetailedListing extends Component {
     }
 
     componentDidMount () {
-        this._isMounted = true;
         this.getSingleBrewery();
         this.setState({isLoading: false});
     }
 
     componentWillUnmount() {
-        this._isMounted = false;
+        this.setState = (state, callback) => {
+            return;
+        };
     }
 
     render() {
